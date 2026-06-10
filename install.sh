@@ -24,10 +24,10 @@ echo "############################################################"
 echo ""
 
 echo "[1/8] Installing system dependencies..."
-
-apt-get install -yq nginx php php-{fpm,cli,common,mysql,pgsql,sqlite3,curl,gd,mbstring,xml,zip,bcmath,intl,readline,tokenizer,opcache} dnsmasq composer libusb-1.0-0-dev pkg-config build-essential git-core rsync libncurses-dev unzip python bc
+apt update >> /dev/null
+apt install -yq nginx php php-{fpm,cli,common,mysql,pgsql,sqlite3,curl,gd,mbstring,xml,zip,bcmath,intl,readline,tokenizer,opcache} dnsmasq composer libusb-1.0-0-dev pkg-config build-essential git-core rsync libncurses-dev unzip python bc >> /dev/null
 curl -fsSL https://deb.nodesource.com/setup_24.x | bash >> /dev/null
-apt-get install -yq nodejs
+apt install -yq nodejs >> /dev/null
 
 echo ""
 echo "[2/8] Configure system settings..."
