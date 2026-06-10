@@ -1,3 +1,0 @@
-[submodule "rpi-eeprom"]
-	path = rpi-eeprom
-	url = https://github.com/raspberrypi/rpi-eeprom
