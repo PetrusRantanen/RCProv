@@ -11,7 +11,7 @@ A provisioning system for the R-Cooker ovens Compute Module computers.
 
 ### Installing
 
-**This must be gone to fresh installation of Raspberry Pi OS**
+**This must be done to fresh installation of Raspberry Pi OS**
 
 * Clone repository to computer
 ````
