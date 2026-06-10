@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ScriptExecuteController;
 use Illuminate\Support\Facades\Route;
 
 Route::livewire('/', 'pages::home');
@@ -12,4 +13,4 @@ Route::livewire('/labels', 'pages::labels');
 Route::livewire('/settings', 'pages::settings');
 
 // Script execute
-Route::any('/scriptexecute', \App\Http\Controllers\ScriptExecuteController::class);
+Route::any('/scriptexecute', ScriptExecuteController::class);
