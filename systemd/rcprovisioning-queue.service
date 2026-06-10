@@ -1,0 +1,11 @@
+[Unit]
+Description="RCProvisioning - Queue worker"
+
+[Service]
+User=www-data
+Group=www-data
+Restart=always
+ExecStart=/var/www/rcprovisioning/artisan queue:work
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,17 @@
+[Unit]
+Description="RCProvisioning - DNSMASQ service"
+Requires=network.target
+Wants=nss-lookup.target
+Before=nss-lookup.target
+After=network.target
+
+[Service]
+Type=forking
+PIDFile=/run/rcprovisioning-dnsmasq.pid
+
+ExecStartPre=/usr/sbin/dnsmasq -C /var/www/rcprovisioning/etc/dnsmasq.conf --test
+ExecStart=/usr/sbin/dnsmasq -C /var/www/rcprovisioning/etc/dnsmasq.conf --pid-file=/run/rcprovisioning-dnsmasq.pid
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,9 @@
+[Unit]
+Description="RCProvisioning - Rpiboot service"
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/rpiboot -l -d /var/www/rcprovisioning/scriptexecute
+
+[Install]
+WantedBy=multi-user.target
