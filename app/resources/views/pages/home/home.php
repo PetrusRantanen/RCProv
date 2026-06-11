@@ -1,14 +1,15 @@
 <?php
 
 use Livewire\Component;
+use App\Models\Cmlog;
 
 new class extends Component
 {
-    public $title = 'Home';
+    public $log;
 
     public function render()
     {
-        return $this->view()
-            ->title('Home');
+        $this->log = Cmlog::orderBy('id','desc')->limit(100)->get();
+        return $this->view();
     }
 };

@@ -1,0 +1,37 @@
+// Brand colors
+$dark: #363636;
+$orange: #FFA500;
+
+
+// Initialize Bulma with modifications
+@use "bulma/sass" with (
+
+    // Font customizations
+    $family-sans-serif: '"Nunito", sans-serif',
+    $weight-light: 200,
+    $weight-normal: 300,
+    $weight-extrabold: 900,
+
+    // Color customizations
+    $primary: $dark,
+    $link: $orange,
+
+    // Navbar customizations
+    $navbar-dropdown-arrow: $dark,
+
+    // Footer customizations
+    $footer-padding: 1.5rem 1.5rem 1.5rem 1.5rem,
+
+    // Modal customizations
+    $modal-content-width: 800px,
+    $navbar-box-shadow-size: 0 0.125em 0 0,
+    $navbar-box-shadow-color: rgba(10, 10, 10, 0.1),
+    $modal-card-head-padding: 1.5rem,
+    $modal-card-body-padding: 1.5rem,
+);
+
+// Include extra libraries to Bulma
+@use 'bulma-switch';
+
+// Include some UI fixes
+@forward "ui-fixes";
