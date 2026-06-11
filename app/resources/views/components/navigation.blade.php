@@ -31,12 +31,12 @@ new class extends Component
             <div class="navbar-start">
                 <a class="navbar-item is-tab{{ (Route::current()->getName() === 'home') ? ' is-active' : '' }}" href="{{ route('home') }}">Kojelauta</a>
                 <a class="navbar-item is-tab{{ (Route::current()->getName() === 'cms') ? ' is-active' : '' }}" href="{{ route('cms') }}">CMt</a>
-                <a class="navbar-item is-tab">Levykuvat</a>
-                <a class="navbar-item is-tab">Projektit</a>
-                <a class="navbar-item is-tab">Skriptit</a>
-                <a class="navbar-item is-tab">Etiketit</a>
+                <a class="navbar-item is-tab{{ (Route::current()->getName() === 'images') ? ' is-active' : '' }}" href="{{ route('images') }}">Levykuvat</a>
+                <a class="navbar-item is-tab{{ (Route::current()->getName() === 'projects') ? ' is-active' : '' }}" href="{{ route('projects') }}">Projektit</a>
+                <a class="navbar-item is-tab{{ (Route::current()->getName() === 'scripts') ? ' is-active' : '' }}" href="{{ route('scripts') }}">Skriptit</a>
+                <a class="navbar-item is-tab{{ (Route::current()->getName() === 'labels') ? ' is-active' : '' }}" href="{{ route('labels') }}">Etiketit</a>
                 <a class="navbar-item is-tab{{ (Route::current()->getName() === 'firmwares') ? ' is-active' : '' }}" href="{{ route('firmwares') }}">Firmwaret</a>
-                <a class="navbar-item is-tab">Muut asetukset</a>
+                <a class="navbar-item is-tab{{ (Route::current()->getName() === 'settings') ? ' is-active' : '' }}" href="{{ route('settings') }}">Muut asetukset</a>
             </div>
 
             <div class="navbar-end">

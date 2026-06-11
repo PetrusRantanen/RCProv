@@ -72,7 +72,7 @@
                                         </td> 
                                     </tr>
                                     @empty
-                                    <tr><td colspan="3" class="has-text-centered">Merkintöjä ei löytynyt.</td></tr>
+                                    <tr><td colspan="5" class="has-text-centered">Merkintöjä ei löytynyt.</td></tr>
                                     @endforelse
                                 </tbody>
                             </table>

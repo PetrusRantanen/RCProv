@@ -50,7 +50,10 @@ new class extends Component
 
     public function delete($id)
     {
-        Cm::destroy($id);
+        $cm = Cm::find($id);
+        $cm->logs()->delete();
+        $cm->delete();
+
         session()->flash('message', 'CM poistettu.');
     }
 

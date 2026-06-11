@@ -24,4 +24,9 @@ class Cm extends Model
     {
         return $this->belongsTo(Project::class);
     }
+
+    public function logs()
+    {
+        return $this->hasMany(Cmlog::class, 'cm', 'serial');
+    }
 }

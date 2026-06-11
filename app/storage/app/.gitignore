@@ -1,4 +1,5 @@
 *
+!firmware/
 !private/
 !public/
 !.gitignore
