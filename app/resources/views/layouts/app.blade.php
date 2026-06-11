@@ -17,8 +17,6 @@
             {{ $slot }}
         </section>
 
-        <livewire:footer />
-
         @livewireScripts
     </body>
 </html>

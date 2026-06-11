@@ -7,7 +7,7 @@ Route::livewire('/', 'pages::home')->name('home');
 Route::livewire('/cms', 'pages::cms')->name('cms');
 Route::livewire('/images', 'pages::images');
 Route::livewire('/projects', 'pages::projects');
-Route::livewire('/firmwares', 'pages::firmwares');
+Route::livewire('/firmwares', 'pages::firmwares')->name('firmwares');
 Route::livewire('/scripts', 'pages::scripts');
 Route::livewire('/labels', 'pages::labels');
 Route::livewire('/settings', 'pages::settings');

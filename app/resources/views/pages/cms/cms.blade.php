@@ -18,7 +18,7 @@
                             <div class="field is-narrow">
                                 <div class="control">
                                     <div class="select is-fullwidth">
-                                        <select wire:model="projectId">
+                                        <select wire:model.live="projectId">
                                             <option value="0">Kaikki projektit</option>
                                             @foreach ($projects as $project)
                                             <option value="{{ $project->id }}">{{ $project->name }} ({{ $project->cms_count }})</option>
