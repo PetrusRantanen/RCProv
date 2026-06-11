@@ -11,16 +11,13 @@
         @livewireStyles
     </head>
     <body>
-        <div class="app">
-            <livewire:navigation />
+        <livewire:navigation />
 
-            <section class="section">
-                {{ $slot }}
-            </section>
+        <section class="section">
+            {{ $slot }}
+        </section>
 
-            <livewire:footer />
-
-        </div>
+        <livewire:footer />
 
         @livewireScripts
     </body>

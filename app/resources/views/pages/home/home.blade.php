@@ -25,7 +25,7 @@
                                         <td>{!! nl2br(e($l->created_at->toTimeString().' '.$l->msg), false) !!}</td>
                                     </tr>
                                     @empty
-                                    <tr><td colspan="3" class="has-text-centered">{{ __('No log entries found.') }}</td></tr>
+                                    <tr><td colspan="3" class="has-text-centered">Lokimerkintöjä ei löytynyt.</td></tr>
                                     @endforelse
                                 </tbody>
                             </table>

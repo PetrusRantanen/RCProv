@@ -6,5 +6,61 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
-    //
+    protected $fillable = ['name', 'device', 'storage', 'image_id', 'label_id', 'label_moment', 'eeprom_firmware', 'eeprom_settings', 'verify'];
+
+    protected $casts = ['verify' => 'boolean'];
+
+    public function image()
+    {
+        return $this->belongsTo(Image::class);
+    }
+
+    public function label()
+    {
+        return $this->belongsTo(Label::class);
+    }
+
+    public function scripts()
+    {
+        return $this->belongsToMany(Script::class);
+    }
+
+    public function cms()
+    {
+        return $this->hasMany(Cm::class);
+    }
+
+    public function isActive()
+    {
+        return $this->id == Project::getActiveId();
+    }
+
+    public static function getActive()
+    {
+        $activeId = self::getActiveId();
+        if (! $activeId) {
+            return null;
+        }
+
+        return Project::find($activeId);
+    }
+
+    public static function getActiveId()
+    {
+        $s = Setting::find('active_project');
+        if (! $s) {
+            return null;
+        }
+
+        return intval($s->value);
+    }
+
+    public function delete()
+    {
+        if ($this->getActiveId() == $this->id) {
+            Setting::destroy('active_project');
+        }
+
+        parent::delete();
+    }
 }

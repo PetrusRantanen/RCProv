@@ -30,7 +30,8 @@ new class extends Component
         <div id="navbarBasicExample" class="navbar-menu {{ $isOpen ? 'is-active' : '' }}">
             <div class="navbar-start">
                 <a class="navbar-item is-tab{{ (Route::current()->getName() === 'home') ? ' is-active' : '' }}" href="{{ route('home') }}">Kojelauta</a>
-                <a class="navbar-item is-tab">CMt</a>
+                <a class="navbar-item is-tab{{ (Route::current()->getName() === 'cms') ? ' is-active' : '' }}" href="{{ route('cms') }}">CMt</a>
+
                 <a class="navbar-item is-tab">Levykuvat</a>
                 <a class="navbar-item is-tab">Projektit</a>
                 <a class="navbar-item is-tab">Skriptit</a>

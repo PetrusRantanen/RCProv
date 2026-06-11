@@ -4,7 +4,7 @@ use App\Http\Controllers\ScriptExecuteController;
 use Illuminate\Support\Facades\Route;
 
 Route::livewire('/', 'pages::home')->name('home');
-Route::livewire('/cms', 'pages::cms');
+Route::livewire('/cms', 'pages::cms')->name('cms');
 Route::livewire('/images', 'pages::images');
 Route::livewire('/projects', 'pages::projects');
 Route::livewire('/firmwares', 'pages::firmwares');
