@@ -1,13 +1,13 @@
 <div class="modal {{ $modalOpen ? 'is-active' : '' }}">
     <div class="modal-background"></div>
     <div class="modal-card">
-        <header class="modal-card-head">
-            <p class="modal-card-title has-text-weight-bold">Lisää uusi levykuva</p>
-            <button class="delete" aria-label="close" wire:click="cancel()"></button>
-        </header>
+        <form method="post" action="/addImage" enctype="multipart/form-data" onsubmit="uploadbutton.disabled = true; return true;">
+            <header class="modal-card-head">
+                <p class="modal-card-title has-text-weight-bold">Lisää uusi levykuva</p>
+                <button id="uploadbutton" class="delete" aria-label="close" wire:click="cancel()"></button>
+            </header>
 
-        <section class="modal-card-body">
-           <form method="post" action="/addImage" enctype="multipart/form-data" onsubmit="uploadbutton.disabled = true; return true;">
+            <section class="modal-card-body">
                 @csrf
 
                 <article class="message is-warning">
@@ -53,14 +53,14 @@
                          </span>
                     </label>
                 </div>
-            </form>
-        </section>
+            </section>
 
-        <footer class="modal-card-foot is-justify-content-flex-end">
-            <div class="buttons">
-                <input id="uploadbutton" type="submit" class="button is-link" value="Lataa" />
-                <button class="button" wire:click="cancel()">Sulje</button>
-            </div>
-        </footer>
+            <footer class="modal-card-foot is-justify-content-flex-end">
+                <div class="buttons">
+                    <input id="uploadbutton" type="submit" class="button is-link" value="Lataa"/>
+                    <button id="uploadbutton" class="button" wire:click="cancel()">Sulje</button>
+                </div>
+            </footer>
+        </form>
     </div>
 </div>
