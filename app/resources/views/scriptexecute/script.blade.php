@@ -65,7 +65,7 @@ curl --retry 10 -g -F 'log=@/tmp/pre.log' "http://{{ $server }}/scriptexecute?se
 
 @if ($image_url)
 echo Sending BLKDISCARD to $STORAGE
-blkdiscard $STORAGE || true
+blkdiscard -fq $STORAGE || true
 
 echo Writing image from {{ $image_url }} to $STORAGE
 {

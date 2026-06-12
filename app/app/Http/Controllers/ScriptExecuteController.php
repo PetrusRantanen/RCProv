@@ -191,7 +191,7 @@ class ScriptExecuteController extends Controller
             $part2 = $storage.'2';
         }
 
-        return response()->view('scriptexecute', [
+        return response()->view('scriptexecute.script', [
             'cm' => $this->cm,
             'project' => $project,
             'storage' => $storage,
