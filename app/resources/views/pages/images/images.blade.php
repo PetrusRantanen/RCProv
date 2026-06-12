@@ -1,5 +1,17 @@
 
 <div>
+    @if (session()->has('message'))
+    <div class="notification is-success" x-data="{ show: true }" x-init="setTimeout(() => show = false, 3000)" x-show="show">
+        {{ session('message') }}
+    </div>
+    @endif
+
+    @if (session()->has('error'))
+    <div class="notification is-danger" x-data="{ show: true }" x-init="setTimeout(() => show = false, 3000)" x-show="show">
+        {{ session('error') }}
+    </div>
+    @endif
+
     <div class="columns is-multiline">
         <div class="column is-full">
             <div class="container box">
@@ -34,18 +46,18 @@
                                         <tr>
                                             <td>
                                                 <nobr>{{ $i->filename }}</nobr><br />
-                                                <nobr><i><b>Lisätty:</b> {{ date_format($i->created_at, "d.m.y") }}</i></nobr>
+                                                <nobr><span class="has-text-weight-bold is-italic">Lisätty:</span> {{ date_format($i->created_at, "d.m.Y") }}</i></nobr>
                                             </td>
                                             <td>
                                                 <nobr>Pakattu: {{ number_format($i->filesize()/1000000000,1) }}  GB</nobr><br />
-                                                <nobr>Pakkaamaton: {{ $i->uncompressed_size ? number_format($i->uncompressed_size/1000000000,1) : 'tuntematon' }} GB</nobr>
+                                                <nobr>{{ $i->uncompressed_size ? number_format($i->uncompressed_size/1000000000,1) : 'tuntematon' }} GB</nobr>
                                             </td>
                                             <td>
                                                 <nobr>Pakattu: {{ $i->sha256 ? $i->sha256 : "Lasketaan tunnistetta parhaillaan..." }}</nobr><br />
-                                                <nobr>{{ $i->uncompressed_sha256 ? $i->uncompressed_sha256 : "" }}</nobr>
+                                                <nobr>{{ $i->uncompressed_sha256 ? $i->uncompressed_sha256 : "Lasketaan tunnistetta parhaillaan..." }}</nobr>
                                             </td>
                                             <td>
-                                                <button class="button is-small is-danger">Poista</button>
+                                                <button wire:click="delete({{$i->id}})" class="button is-small is-danger">Poista</button>
                                             </td>
                                         </tr>
                                      @empty

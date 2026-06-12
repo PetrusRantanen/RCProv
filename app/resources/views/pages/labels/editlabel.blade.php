@@ -2,7 +2,7 @@
     <div class="modal-background"></div>
     <div class="modal-card">
         <header class="modal-card-head">
-            <p class="modal-card-title">
+            <p class="modal-card-title has-text-weight-semibold">
                 @if($type === 'c') Luo uusi etiketti @else Muokkaa etikettiä @endif
             </p>
             <button class="delete" aria-label="close" wire:click="cancel()"></button>

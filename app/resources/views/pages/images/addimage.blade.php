@@ -3,7 +3,7 @@
     <div class="modal-card">
         <form method="post" action="/addImage" enctype="multipart/form-data" onsubmit="uploadbutton.disabled = true; return true;">
             <header class="modal-card-head">
-                <p class="modal-card-title has-text-weight-bold">Lisää uusi levykuva</p>
+                <p class="modal-card-title has-text-weight-semibold">Lisää uusi levykuva</p>
                 <button id="uploadbutton" class="delete" aria-label="close" wire:click="cancel()"></button>
             </header>
 

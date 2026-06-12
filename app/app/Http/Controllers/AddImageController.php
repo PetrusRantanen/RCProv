@@ -53,7 +53,7 @@ class AddImageController extends Controller
         if ($req->wantsJson()) {
             return $i;
         } else {
-            session()->flash('message', 'Image added.');
+            session()->flash('message', 'Levykuva ladattu onnistuneesti.');
 
             return redirect()->route('images');
         }

@@ -49,7 +49,7 @@
                                     </td>
                                 </tr>
                             @empty
-                                <tr><td class="has-text-centered" colspan="4">No entries</td></tr>
+                                <tr><td class="has-text-centered" colspan="4">Ei etikettejä</td></tr>
                             @endforelse
                             </tbody>
                         </table>

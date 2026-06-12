@@ -43,7 +43,7 @@ new class extends Component
 
     public function delete($id)
     {
-        Image::destroy($id);
+        Image::find($id)->delete();
         session()->flash('message', 'Levykuva poistettu');
     }
 
